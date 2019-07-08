@@ -24,15 +24,19 @@ function reset() {
 	var myChar = "";
 	var myDef = "";
 
-	characters.ObiWan.healthPoints = 120;
-	characters.LukeSky.healthPoints = 100;
-	characters.DarSid.healthPoints = 150;
-	characters.DarMaul.healthPoints = 180;
+	characters.House.healthPoints = 300;
+	characters.Legion.healthPoints = 500;
+	characters.NCR.healthPoints = 550;
+	characters.Yesman.healthPoints = 275;
+	characters.BoS.healthPoints = 250;
+	characters.Enclave.healthPoints = 200;
 
-	characters.ObiWan.attackPower = 8;
-	characters.LukeSky.attackPower = 10;
-	characters.DarSid.attackPower = 10;
-	characters.DarMaul.attackPower = 12;
+	characters.House.attackPower = 35;
+	characters.Legion.attackPower = 60;
+	characters.NCR.attackPower = 75;
+	characters.Yesman.attackPower = 40;
+	characters.BoS.attackPower = 55;
+	characters.Enclave.attackPower = 25;
 
 	$(".youAttacked").empty();
 	$(".attackedBack").empty();
@@ -41,63 +45,86 @@ function reset() {
 	$(".youLose").empty();
 	$(".noEnemy").empty();
 
-	$(".nameo").html(characters.ObiWan.fullName);
-	$(".namel").html(characters.LukeSky.fullName);
-	$(".nameds").html(characters.DarSid.fullName);
-	$(".namedm").html(characters.DarMaul.fullName);
+	$(".nameh").html(characters.House.fullName);
+	$(".namel").html(characters.Legion.fullName);
+	$(".namen").html(characters.NCR.fullName);
+	$(".namey").html(characters.Yesman.fullName);
+	$(".nameb").html(characters.BoS.fullname);
+	$(".namee").html(characters.Enclave.fullname);
 
-	$("#darthS").appendTo("#picRow");
-	$("#darthM").appendTo("#picRow");
-	$("#luke").appendTo("#picRow");
-	$("#obi").appendTo("#picRow");
+	$("#house").appendTo("#picRow");
+	$("#legion").appendTo("#picRow");
+	$("#ncr").appendTo("#picRow");
+	$("#yesman").appendTo("#picRow");
+	$("#bos").appendTo("#picRow");
+	$("#enclave").appendTo("#picRow");
 
-	$(".ob1hp").html(characters.ObiWan.healthPoints);
-	$(".lukehp").html(characters.LukeSky.healthPoints);
-	$(".darthshp").html(characters.DarSid.healthPoints);
-	$(".darthmhp").html(characters.DarMaul.healthPoints);
+	$(".househp").html(characters.House.healthPoints);
+	$(".legionhp").html(characters.Legion.healthPoints);
+	$(".ncrhp").html(characters.NCR.healthPoints);
+	$(".yesmanhp").html(characters.Yesman.healthPoints);
 
-	$(".firstRow").css({"background-color": "white", "outline-color": "limegreen", 
+	$(".firstRow").css({"background-color": "white", "outline-color": "orangered", 
 	"border-width": "3px", "outline-style": "solid", "border-color": "white", "outline-width": "3px"});
 
 };
 
 var characters = { 
 
-	ObiWan: {
-			name: "ObiWan",
-			visual: 'assets/images/ObiWan.jpg',
-			healthPoints: 120,
-			attackPower: 8,
-			fullName: "Obi-Wan Kenobi",
-			counterAttackPower: 24
+	House: {
+			name: "House",
+			visual: 'assets/css/images/house.png',
+			healthPoints: 300,
+			attackPower: 35,
+			fullName: "Mr. House's NV",
+			counterAttackPower: 45
 			},
 
-	LukeSky:{
-			name: "LukeSky",
-			visual: 'assets/images/LukeSkywalker.jpg',
-			healthPoints: 100,
-			attackPower: 10,
-			fullName: "Luke Skywalker",
-			counterAttackPower: 5
+	Legion:{
+			name: "Legion",
+			visual: 'assets/css/images/legion.png',
+			healthPoints: 500,
+			attackPower: 60,
+			fullName: "Caesar's Legion",
+			counterAttackPower: 50
 			},
 
-	DarSid:{ 
-			name: "DarSid",
-			visual: 'assets/images/DarthSidious.png',
-			healthPoints: 150,
-			attackPower: 10,
-			fullName: "Darth Sideous",
-			counterAttackPower: 20
+	NCR:{ 
+			name: "NCR",
+			visual: 'assets/css/images/ncr.jpg',
+			healthPoints: 550,
+			attackPower: 75,
+			fullName: "NCR",
+			counterAttackPower: 80
 			},
 
-	DarMaul:{ 
-			name: "DarMaul",
-			visual: 'assets/images/DarthMaul.png',
-			healthPoints: 180,
-			attackPower: 12,
-			fullName: "Darth Maul",
+	Yesman:{ 
+			name: "Yesman",
+			visual: 'assets/css/images/yesman.png',
+			healthPoints: 275,
+			attackPower: 40,
+			fullName: "Independent NV",
 			counterAttackPower: 25
-			}
+			},
+
+	BoS:{ 
+			name: "BoS",
+			visual: 'assets/css/images/bos.jpg',
+			healthPoints: 250,
+			attackPower: 55,
+			fullName: "BoS",
+			counterAttackPower: 10
+			},
+		
+	Enclave:{ 
+			name: "Enclave",
+			visual: 'assets/css/images/enclave.jpg',
+			healthPoints: 200,
+			attackPower: 25,
+			fullName: "Enclave",
+			counterAttackPower: 1
+			},
+
 };
 
 
@@ -112,35 +139,48 @@ var characters = {
 	       myChar = $(this);
 	       YourCharacter = $(myChar).attr("value");
        	   }
-	       if (YourCharacter == characters.ObiWan.name) {
-	       		attackerHP = characters.ObiWan.healthPoints;
-	       		attackerAP = characters.ObiWan.attackPower;
-	       		attackerCAP = characters.ObiWan.counterAttackPower;
-	       		attackerFN = characters.ObiWan.fullName;
-	       		attack = characters.ObiWan;
+	       if (YourCharacter == characters.House.name) {
+	       		attackerHP = characters.House.healthPoints;
+	       		attackerAP = characters.House.attackPower;
+	       		attackerCAP = characters.House.counterAttackPower;
+	       		attackerFN = characters.House.fullName;
+	       		attack = characters.House;
 	       }
-	       else if (YourCharacter == characters.LukeSky.name){
-	       		attackerHP = characters.LukeSky.healthPoints;
-	       		attackerAP = characters.LukeSky.attackPower;
-	       		attackerCAP = characters.LukeSky.counterAttackPower;
-	       		attackerFN = characters.LukeSky.fullName;
-	       		attack = characters.LukeSky;
+	       else if (YourCharacter == characters.Legion.name){
+	       		attackerHP = characters.Legion.healthPoints;
+	       		attackerAP = characters.Legion.attackPower;
+	       		attackerCAP = characters.Legion.counterAttackPower;
+	       		attackerFN = characters.Legion.fullName;
+	       		attack = characters.Legion;
 	       }
-	       else if (YourCharacter == characters.DarSid.name){
-	       		attackerHP = characters.DarSid.healthPoints;
-	       		attackerAP = characters.DarSid.attackPower;
-	       		attackerCAP = characters.DarSid.counterAttackPower;
-	       		attackerFN = characters.DarSid.fullName;
-	       		attack = characters.DarSid;
+	       else if (YourCharacter == characters.NCR.name){
+	       		attackerHP = characters.NCR.healthPoints;
+	       		attackerAP = characters.NCR.attackPower;
+	       		attackerCAP = characters.NCR.counterAttackPower;
+	       		attackerFN = characters.NCR.fullName;
+	       		attack = characters.NCR;
 	       }
-	       else if (YourCharacter == characters.DarMaul.name){
-	       		attackerHP = characters.DarMaul.healthPoints;
-	       		attackerAP = characters.DarMaul.attackPower;
-	       		attackerCAP = characters.DarMaul.counterAttackPower;
-	       		attackerFN = characters.DarMaul.fullName;
-	       		attack = characters.DarMaul;
+	       else if (YourCharacter == characters.Yesman.name){
+	       		attackerHP = characters.Yesman.healthPoints;
+	       		attackerAP = characters.Yesman.attackPower;
+	       		attackerCAP = characters.Yesman.counterAttackPower;
+	       		attackerFN = characters.Yesman.fullName;
+	       		attack = characters.Yesman;
 	       }
-	              
+		   else if (YourCharacter == characters.BoS.name){
+			   attackerHP = characters.BoS.healthPoints;
+			   attackerAP = characters.BoS.attackPower;
+			   attackerCAP = characters.BoS.counterAttackPower;
+			   attackersFN = characters.BoS.fullName;
+			   attack = characters.BoS;
+		   }
+		   else if (YourCharacter == characters.Enclave.name){
+			   attackersHP = characters.Enclave.healthPoints;
+			   attackersAP = characters.Enclave.attackPower;
+			   attackerCAP = characters.Enclave.fullName;
+			   attack = characters.Enclave;
+		   }
+
 	       for (var i = 0; i < 4; i++) {
 	       	$("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
 
@@ -161,38 +201,54 @@ var characters = {
 	     	YourDefender = $(myDef).children().attr("value");
 	     	$(".youDefeated").empty();
 
-	       if (YourDefender == characters.ObiWan.name) {
-	       		defenderHP = characters.ObiWan.healthPoints;
-	       		defenderAP = characters.ObiWan.attackPower;
-	       		defenderCAP = characters.ObiWan.counterAttackPower;
-	       		defenderFN = characters.ObiWan.fullName;
-	       		defend = characters.ObiWan;
+	       if (YourDefender == characters.House.name) {
+	       		defenderHP = characters.House.healthPoints;
+	       		defenderAP = characters.House.attackPower;
+	       		defenderCAP = characters.House.counterAttackPower;
+	       		defenderFN = characters.House.fullName;
+	       		defend = characters.House;
 	       	
 	       	}
-	       	else if (YourDefender == characters.LukeSky.name){
-	       		defenderHP = characters.LukeSky.healthPoints;
-	       		defenderAP = characters.LukeSky.attackPower;
-	       		defenderCAP = characters.LukeSky.counterAttackPower;
-	       		defenderFN = characters.LukeSky.fullName;
-	       		defend = characters.LukeSky;
+	       	else if (YourDefender == characters.Legion.name){
+	       		defenderHP = characters.Legion.healthPoints;
+	       		defenderAP = characters.Legion.attackPower;
+	       		defenderCAP = characters.Legion.counterAttackPower;
+	       		defenderFN = characters.Legion.fullName;
+	       		defend = characters.Legion;
 	       		
 	       }
-	       else if (YourDefender == characters.DarSid.name){
-	       		defenderHP = characters.DarSid.healthPoints;
-	       		defenderAP = characters.DarSid.attackPower;
-	       		defenderCAP = characters.DarSid.counterAttackPower;
-	       		defenderFN = characters.DarSid.fullName;
-	       		defend = characters.DarSid;
+	       else if (YourDefender == characters.NCR.name){
+	       		defenderHP = characters.NCR.healthPoints;
+	       		defenderAP = characters.NCR.attackPower;
+	       		defenderCAP = characters.NCR.counterAttackPower;
+	       		defenderFN = characters.NCR.fullName;
+	       		defend = characters.NCR;
 	       		
 	       }
-	       else if (YourDefender == characters.DarMaul.name){
-	       		defenderHP = characters.DarMaul.healthPoints;
-	       		defenderAP = characters.DarMaul.attackPower;
-	       		defenderCAP = characters.DarMaul.counterAttackPower;
-	       		defenderFN = characters.DarMaul.fullName;
-	       		defend = characters.DarMaul;
+	       else if (YourDefender == characters.Yesman.name){
+	       		defenderHP = characters.Yesman.healthPoints;
+	       		defenderAP = characters.Yesman.attackPower;
+	       		defenderCAP = characters.Yesman.counterAttackPower;
+	       		defenderFN = characters.Yesman.fullName;
+	       		defend = characters.Yesman;
 	       		
-	       }
+		   }
+		   else if (YourDefender == characters.BoS.name){
+			   defenderHP = characters.BoS.healthPoints;
+			   defenderAP = characters.BoS.attackPower;
+			   defenderCAP = characters.BoS.counterAttackPower;
+			   defenderFN = characters.BoS.fullName;
+			   defend = characters.BoS;
+
+		   }
+		   else if (YourDefender == characters.Enclave.name){
+			   defenderHP = characters.Enclave.healthPoints;
+			   defenderAP = characters.Enclave.attackPower;
+			   defenderCAP = characters.Enclave.counterAttackPower;
+			   defenderFN = characters.Enclave.fullname;
+			   defend = characters.Enclave;
+
+		   }
 	    
 
      });

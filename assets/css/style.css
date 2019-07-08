@@ -1,7 +1,7 @@
 body {
 	background-image: url("../css/images/background.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover
 
 
 }
@@ -9,18 +9,19 @@ body {
 #RPG {
 	font-size: 54px;
 	font-family: 'Lekton', sans-serif;
+	color: burlywood
 }
 
 .firstRow{
 	border-style: solid;
 	border-width: 3px;
-	border-color: white;
+	border-color: burlywood;
 	box-sizing: border-box;
 	outline-style: solid;
-	outline-color: limegreen;
+	outline-color: orangered;
 	outline-width: 3px;
 	align-items: center;
-	background-color: white;
+	background-color: burlywood;
 }
 
 .name, .HP {
@@ -31,7 +32,7 @@ body {
 
 }
 
-#imageo, #imagel, #imageds, #imagedm {
+#imageh, #imagel, #imagen, #imagey, #imageb, #imagee {
 	width: 96%;
 	height: 65%;
 		
@@ -47,7 +48,7 @@ body {
 .padLeft {
 	padding-left: 20px;
 	padding-top: 3px;
-
+	color: burlywood
 
 }
 
