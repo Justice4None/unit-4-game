@@ -29,12 +29,20 @@ function reset() {
 	characters.NCR.healthPoints = 550;
 	characters.Yesman.healthPoints = 275;
 	characters.BoS.healthPoints = 250;
+<<<<<<< HEAD
+=======
+	characters.Enclave.healthPoints = 200;
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 
 	characters.House.attackPower = 35;
 	characters.Legion.attackPower = 60;
 	characters.NCR.attackPower = 75;
 	characters.Yesman.attackPower = 40;
 	characters.BoS.attackPower = 55;
+<<<<<<< HEAD
+=======
+	characters.Enclave.attackPower = 25;
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 
 	$(".youAttacked").empty();
 	$(".attackedBack").empty();
@@ -48,6 +56,10 @@ function reset() {
 	$(".namen").html(characters.NCR.fullName);
 	$(".namey").html(characters.Yesman.fullName);
 	$(".nameb").html(characters.BoS.fullname);
+<<<<<<< HEAD
+=======
+	$(".namee").html(characters.Enclave.fullname);
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 
 	$("#house").appendTo("#picRow");
 	$("#legion").appendTo("#picRow");
@@ -60,7 +72,10 @@ function reset() {
 	$(".legionhp").html(characters.Legion.healthPoints);
 	$(".ncrhp").html(characters.NCR.healthPoints);
 	$(".yesmanhp").html(characters.Yesman.healthPoints);
+<<<<<<< HEAD
 	$(".boshp").html(characters.BoS.healthPoints);
+=======
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 
 	$(".firstRow").css({"background-color": "white", "outline-color": "orangered", 
 	"border-width": "3px", "outline-style": "solid", "border-color": "white", "outline-width": "3px"});
@@ -113,6 +128,18 @@ var characters = {
 			fullName: "BoS",
 			counterAttackPower: 10
 			},
+<<<<<<< HEAD
+=======
+		
+	Enclave:{ 
+			name: "Enclave",
+			visual: 'assets/css/images/enclave.jpg',
+			healthPoints: 200,
+			attackPower: 25,
+			fullName: "Enclave",
+			counterAttackPower: 1
+			},
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 
 };
 
@@ -163,10 +190,23 @@ var characters = {
 			   attackersFN = characters.BoS.fullName;
 			   attack = characters.BoS;
 		   }
+<<<<<<< HEAD
 
 	       for (var i = 0; i < 9; i++) {
 	       	$("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
 				
+=======
+		   else if (YourCharacter == characters.Enclave.name){
+			   attackersHP = characters.Enclave.healthPoints;
+			   attackersAP = characters.Enclave.attackPower;
+			   attackerCAP = characters.Enclave.fullName;
+			   attack = characters.Enclave;
+		   }
+
+	       for (var i = 0; i < 4; i++) {
+	       	$("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
+
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 	       	$("._" + [i]).not(myChar).css({"background-color": "red", "outline-color": "black", 
 	       		"border-width": "3px", "outline-style": "solid", "border-color": "black", "outline-width": "1px"});
 
@@ -224,7 +264,18 @@ var characters = {
 			   defend = characters.BoS;
 
 		   }
+<<<<<<< HEAD
 		   
+=======
+		   else if (YourDefender == characters.Enclave.name){
+			   defenderHP = characters.Enclave.healthPoints;
+			   defenderAP = characters.Enclave.attackPower;
+			   defenderCAP = characters.Enclave.counterAttackPower;
+			   defenderFN = characters.Enclave.fullname;
+			   defend = characters.Enclave;
+
+		   }
+>>>>>>> b3e7b7e6a4388edd31cb2ed9a76bcbb709583b79
 	    
 
      });
